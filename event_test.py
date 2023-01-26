@@ -2,14 +2,17 @@
 
 def get_events():
     return_value = []
+    left = False
+    right = False
+    up = False
 
- #   if keyboard.is_pressed("left arrow"):
-    return_value.append("left arrow")
+    if left:
+        return_value.append("left arrow")
 
-#    if keyboard.is_pressed("right arrow"):
-    return_value.append("right arrow")
+    if right:
+        return_value.append("right arrow")
 
-#    if keyboard.is_pressed("up arrow"):
-    return_value.append("up arrow")
+    if up:
+        return_value.append("up arrow")
 
     return return_value
