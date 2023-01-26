@@ -2,11 +2,14 @@ import time
 import event as event
 
 gamepiece = "|"
-bg = "_"
-gameboard = [bg for x in range(0,30)]
+bg = " "
+boardwidth = 30
+gameboard_past = [bg for x in range(0,boardwidth)]
+gameboard_future = [list() for preview in range(0,4)]
+for preview in range(0,4):
+    gameboard_future[preview] = [bg for x in range(0, boardwidth)]
 pieceposition = 3
-max_position = len(gameboard)
-print(gameboard)
+max_position = len(gameboard_past)
 
 gameinprogress = True
 
@@ -16,17 +19,17 @@ while gameinprogress:
 
     if "left arrow" in events:
         if pieceposition > 0:
-            gameboard[pieceposition] = bg
+            gameboard_past[pieceposition] = bg
             pieceposition = pieceposition - 1
-        gameboard[pieceposition] = gamepiece
+        gameboard_past[pieceposition] = gamepiece
         
     if "right arrow" in events:
         if pieceposition < max_position:
-            gameboard[pieceposition] = bg
+            gameboard_past[pieceposition] = bg
             pieceposition = pieceposition + 1
-        gameboard[pieceposition] = gamepiece
+        gameboard_past[pieceposition] = gamepiece
     
-    if "up arrow" in events:
+    if "q" in events:
         gameinprogress = False
 
-    print(*gameboard, sep='')
+    print(*gameboard_past, sep='')
