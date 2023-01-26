@@ -1,9 +1,9 @@
 import time
-import event_test as event
+import event as event
 
 gamepiece = "|"
 bg = "_"
-gameboard = [bg,bg,bg,bg,bg]
+gameboard = [bg for x in range(0,30)]
 pieceposition = 3
 max_position = len(gameboard)
 print(gameboard)
@@ -11,7 +11,7 @@ print(gameboard)
 gameinprogress = True
 
 while gameinprogress:
-    time.sleep(0.5)
+    time.sleep(0.10)
     events = event.get_events()
 
     if "left arrow" in events:
@@ -23,7 +23,7 @@ while gameinprogress:
     if "right arrow" in events:
         if pieceposition < max_position:
             gameboard[pieceposition] = bg
-            pieceposition = pieceposition - 1
+            pieceposition = pieceposition + 1
         gameboard[pieceposition] = gamepiece
     
     if "up arrow" in events:
