@@ -6,7 +6,7 @@ bg = " "
 boardwidth = 30
 previewsize = 4
 gameboard_past = [bg for x in range(0,boardwidth)]
-gameboard_future = [[bg for x in range(0, boardwidth)] for preview in range(0,previewsize)]
+#gameboard_future = [[bg for x in range(0, boardwidth)] for preview in range(0,previewsize)]
 pieceposition = 3
 max_position = len(gameboard_past)
 
