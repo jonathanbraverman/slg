@@ -12,4 +12,7 @@ def get_events():
     if keyboard.is_pressed("q"):
         return_value.append("q")
 
+    if keyboard.is_pressed("up arrow"):
+        return_value.append("up arrow")
+        
     return return_value
